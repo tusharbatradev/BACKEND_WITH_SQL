@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.route("/").get(getData).post(postData);
 
-router.route('/:id').get(getDataById).delete(deleteData).patch(updateData)
+router.route('/:id').get(getDataById).delete(deleteData).put(updateData)
 
 module.exports = router;

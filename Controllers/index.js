@@ -55,12 +55,12 @@ function deleteData(req, res) {
 }
 
 function updateData(req, res) {
-  const { param_id } = req.params;
+  const { id } = req.params;
   const { name } = req.body;
 
   const update_query = `UPDATE demotable SET name = $1 WHERE id = $2`;
 
-  pool.query(update_query, [name, param_id], (err, result) => {
+  pool.query(update_query, [name, id], (err, result) => {
     if (err) {
       res.send(err);
     } else {
